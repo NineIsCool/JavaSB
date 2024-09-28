@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mod1" />
-        <module name="mod2" />
+        <module name="skillbox.mod1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="base.mod1" target="22" />
+      <module name="base.mod2" target="22" />
+    </bytecodeTargetLevel>
   </component>
 </project>
