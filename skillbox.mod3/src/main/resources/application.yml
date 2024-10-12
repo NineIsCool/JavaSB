@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: skillbox.mod3
-  datasource:
-    url: jdbc:postgresql://${DB_HOST:invest_postgres}:${DB_PORT:5432}/${DB_NAME:investbot}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:postgres}
-    driver-class-name: org.postgresql.Driver

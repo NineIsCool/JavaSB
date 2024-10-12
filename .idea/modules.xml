@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/base.iml" filepath="$PROJECT_DIR$/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/skillbox.mod3/skillbox.mod3.iml" filepath="$PROJECT_DIR$/skillbox.mod3/skillbox.mod3.iml" />
     </modules>
   </component>
 </project>

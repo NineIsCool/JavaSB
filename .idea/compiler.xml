@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="skillbox.mod1" />
-        <module name="skillbox_mod3" />
         <module name="mod2" />
         <module name="skillbox_mod2" />
         <module name="mod1" />
@@ -16,6 +15,7 @@
     <bytecodeTargetLevel>
       <module name="base.mod1" target="22" />
       <module name="base.mod2" target="22" />
+      <module name="skillbox_mod3" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
