@@ -6,9 +6,8 @@
                             http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="2024-10-12-12-23" author="AlexeevNR" context="prod">
-        <createSequence incrementBy="1" sequenceName="hibernate_sequence" startValue="1"/>
         <createTable tableName="contacts">
-            <column name="id" type="BIGINT">
+            <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_contacts"/>
             </column>
             <column name="first_name" type="VARCHAR(255)"/>
