@@ -25,7 +25,7 @@ public class ContactsController {
     @GetMapping("add")
     public String add(Model model) {
         model.addAttribute("contactDTO", new ContactDTO(null, null, null, null));
-        return "add";
+        return "add-update";
     }
 
     @PostMapping("add")
@@ -38,7 +38,7 @@ public class ContactsController {
     public String update(@PathVariable("id") long id, Model model) {
         Contact contact = contactService.getById(id);
         model.addAttribute("contact", contact);
-        return "update";
+        return "add-update";
     }
 
     @PostMapping("update")
