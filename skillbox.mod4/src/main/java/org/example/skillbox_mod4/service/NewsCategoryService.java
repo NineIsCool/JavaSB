@@ -3,7 +3,10 @@ package org.example.skillbox_mod4.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.skillbox_mod4.adapter.repository.NewsCategoryRepository;
+import org.example.skillbox_mod4.adapter.web.dto.rs.CategoryResponse;
 import org.example.skillbox_mod4.domain.NewsCategoryEntity;
+import org.example.skillbox_mod4.service.mapper.CategoryMapper;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,19 +17,21 @@ import java.util.List;
 @Transactional
 public class NewsCategoryService {
     private final NewsCategoryRepository categoryRepository;
+    private final CategoryMapper categoryMapper;
 
-    public List<String> getAll() {
-        List<NewsCategoryEntity> categoryList = categoryRepository.findAll();
-        List<String> categoryNames = new ArrayList<>();
+    public List<CategoryResponse> getAll(Pageable pageable) {
+        List<NewsCategoryEntity> categoryList = categoryRepository.findAll(pageable).getContent();
+        List<CategoryResponse> categoryNames = new ArrayList<>();
         for (NewsCategoryEntity category : categoryList) {
-            categoryNames.add(category.getCategoryName());
+            categoryNames.add(categoryMapper.categoryToResponse(category));
         }
         return categoryNames;
     }
 
-    public void add(String name) {
+    public CategoryResponse add(String name) {
         NewsCategoryEntity category = new NewsCategoryEntity(name);
         categoryRepository.save(category);
+        return categoryMapper.categoryToResponse(category);
     }
 
     public void delete(Long id) {

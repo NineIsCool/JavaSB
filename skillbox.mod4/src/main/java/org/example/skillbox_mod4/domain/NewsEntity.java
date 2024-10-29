@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -34,5 +35,6 @@ public class NewsEntity {
         this.content = content;
         this.userEntity = userEntity;
         this.newsCategoryEntity = newsCategoryEntity;
+        this.commentEntities=new ArrayList<>();
     }
 }

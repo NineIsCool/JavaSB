@@ -24,7 +24,9 @@ public class CommentEntity {
     @ManyToOne
     NewsEntity newsEntity;
 
-    public CommentEntity(String content) {
+    public CommentEntity(String content,UserEntity user, NewsEntity news) {
         this.content = content;
+        this.userEntity = user;
+        this.newsEntity = news;
     }
 }
